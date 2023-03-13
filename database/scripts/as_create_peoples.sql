@@ -1,6 +1,7 @@
-/****************
-* CREATE TABLES *
-****************/
+/***********************
+* ENVIRONMENT: PEOPLES 
+* CREATE TABLES 
+***********************/
 
 -- DROP TABLES
 DROP TABLE IF EXISTS peoples_locations;
@@ -23,7 +24,7 @@ CREATE TABLE peoples (
 	pwd VARCHAR(256) NOT NULL,
 	active boolean NOT NULL DEFAULT true,
 	created_at TIMESTAMP WITH time zone NOT NULL DEFAULT current_timestamp,
-	update_at TIMESTAMP WITH time zone NULL,
+	updated_at TIMESTAMP WITH time zone NULL,
 	deleted_at TIMESTAMP WITH time zone NULL,
 	PRIMARY KEY (id)
 );
@@ -34,12 +35,12 @@ CREATE TABLE peoples_genders (
 	gender VARCHAR(64) NOT NULL UNIQUE,
 	description VARCHAR(256) NULL,
 	created_at TIMESTAMP WITH time zone NOT NULL DEFAULT current_timestamp,
-	update_at TIMESTAMP WITH time zone NULL,
+	updated_at TIMESTAMP WITH time zone NULL,
 	deleted_at TIMESTAMP WITH time zone NULL,
 	PRIMARY KEY (id)
 );
 
--- 3. CREATE TABLE: peoples_genders
+-- 3. CREATE TABLE: peoples_locations
 CREATE TABLE peoples_locations (
 	id SERIAL NOT NULL,
 	name_location VARCHAR(128) NOT NULL,
@@ -52,7 +53,7 @@ CREATE TABLE peoples_locations (
 	address_line VARCHAR(256) NOT NULL,
 	notes TEXT NULL,
 	created_at TIMESTAMP WITH time zone NOT NULL DEFAULT current_timestamp,
-	update_at TIMESTAMP WITH time zone NULL,
+	updated_at TIMESTAMP WITH time zone NULL,
 	deleted_at TIMESTAMP WITH time zone NULL,
 	PRIMARY KEY (id)
 );
@@ -63,7 +64,7 @@ CREATE TABLE peoples_dni_types (
 	dni_type VARCHAR(128) NOT NULL UNIQUE,
 	description VARCHAR(256) NULL,
 	created_at TIMESTAMP WITH time zone NOT NULL DEFAULT current_timestamp,
-	update_at TIMESTAMP WITH time zone NULL,
+	updated_at TIMESTAMP WITH time zone NULL,
 	deleted_at TIMESTAMP WITH time zone NULL,
 	PRIMARY KEY (id)
 );
